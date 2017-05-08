@@ -1,6 +1,6 @@
-#基于vue2重写Cnodejs移动端 [线上访问地址](http://120.24.230.56/index.html)
+# 基于vue2重写Cnodejs移动端 [线上访问地址](http://120.24.230.56/index.html)
 
-###技术栈
+### 技术栈
 `vue2 + vue-router + vuex + ES6 + less + flex.css`
 
 
@@ -12,7 +12,7 @@ webpack 打包，把disk里面的文件丢到阿里云上，配置nginx代理80�
 
 有一个问题啊，线上的vue的路由会被后台视为请求的url,一刷新就404了，目前的解决思路是通过nginx来开启重写url把vue中定义的路由全指到index.html，还在解决汇总，欢迎大神指教，感激不尽~
 
-###安装
+### 安装
 
 项目地址：（`git clone`）
 
@@ -37,9 +37,9 @@ npm run dev
 npm run build
 ```
 
-###开发
+### 开发
 
-###目录结构
+### 目录结构
 <pre>
 .
 ├── README.md           
