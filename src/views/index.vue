@@ -1,6 +1,6 @@
 <template>
     <div>
-        <img class="index" src="../assets/images/index.png">
+        <img class="index" src="../assets/images/index1.jpg">
     </div>
 </template>
 <script>
