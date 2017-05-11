@@ -16,7 +16,7 @@
     overflow: hidden;
   }
   &.show {
-    transform: translateX(200px);
+    transform: translateX(-200px);
   }
 }
 .nv-toolbar {
@@ -35,7 +35,7 @@
     margin: 0;
     z-index: 1;
     top: 0;
-    left: 0;
+    right: 0;
   }
 
   &>span {
@@ -65,7 +65,7 @@
   .add-icon{
     color: #42b983;
     position: absolute;
-    right: 10px;
+    left: 10px;
     top: 10px;
     z-index: 10;
     padding: 5px 15px;

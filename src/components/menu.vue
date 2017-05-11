@@ -29,14 +29,14 @@
         position: fixed;
         top: 0;
         bottom: 0;
-        left: -200px;
+        right: -200px;
         width: 200px;
         background-color: #fff;
         color: #313131;
         transition: all .3s ease;
         z-index: 99;
         &.show {
-            transform: translateX(200px);
+            transform: translateX(-200px);
         }
     }
     /*侧边栏列表*/

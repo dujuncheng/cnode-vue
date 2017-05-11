@@ -4,10 +4,10 @@
         </nv-head>
         <section class="page-body">
             <div class="label">
-                <input class="txt" type="text" placeholder="Access Token" v-model="token" maxlength="36">
+                <el-input v-model="token" placeholder="请输入用户名，可以用‘alsotang’测试哦"></el-input>
             </div>
             <div class="label">
-                <a class="button" @click="logon">登录</a>
+                <el-button type="primary" @click="logon" class="login-btn">登陆</el-button>
             </div>
         </section>
     </div>
@@ -30,21 +30,19 @@
                     return false;
                 }
                 $.ajax({
-                    type: 'POST',
-                    url: 'https://cnodejs.org/api/v1/accesstoken',
-                    data: {
-                        accesstoken: this.token
-                    },
-                    dataType: 'json',
+                    type: 'GET',
+                    url: 'https://cnodejs.org/api/v1/user/' + this.token,
                     success: (res) => {
+                        console.log(res);
                         let user = {
-                            loginname: res.loginname,
-                            avatar_url: res.avatar_url,
-                            userId: res.id,
-                            token: this.token
+                            loginname: res.data.loginname,
+                            avatar_url: res.data.avatar_url
                         };
+//                        先存到sessionStorage里面
                         window.window.sessionStorage.user = JSON.stringify(user);
+//                        然后在放进vuex 里面
                         this.$store.dispatch('setUserInfo', user);
+//                        回退到之前的页面
                         let redirect = decodeURIComponent(this.$route.query.redirect || '/');
                         this.$router.push({
                             path: redirect
@@ -56,6 +54,9 @@
                     }
                 });
             }
+        },
+        mounted () {
+            console.log(this.$route);
         },
         components: {
             nvHead
@@ -96,6 +97,10 @@
                 border-bottom: 2px solid #3aa373;
                 text-align: center;
                 vertical-align: middle;
+            }
+            .login-btn {
+                display: inline-block;
+                width: 99%;
             }
             .file {
                 position: absolute;

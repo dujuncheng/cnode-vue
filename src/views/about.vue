@@ -1,7 +1,6 @@
 <template>
     <div style="height: 100%;">
         <nv-head page-type="关于" :fix-head="true" :need-add="true" ></nv-head>
-
         <dl class="about-info">
 
             <dt>关于项目</dt>

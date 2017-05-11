@@ -67,7 +67,6 @@
             if (this.$route.query && this.$route.query.tab) {
                 this.searchKey.tab = this.$route.query.tab;
             }
-
             // 如果从详情返回并且之前存有对应的查询条件和参数
             // 则直接渲染之前的数据
             if (window.window.sessionStorage.searchKey && window.window.sessionStorage.tab === this.searchKey.tab) {
@@ -111,7 +110,7 @@
             next();
         },
         methods: {
-            // 获取title文字
+            // 获取title文字，然后通过props 传递给子组件
             getTitleStr(tab) {
                 let str = '';
                 switch (tab) {

@@ -1,7 +1,8 @@
 <template>
     <div v-show="show" id="wxloading" class="wx_loading">
-        <div class="wx_loading_inner">
-            <i class="wx_loading_icon"></i>{{showTxt}}...
+        <div class="spinner">
+            <div class="cube1"></div>
+            <div class="cube2"></div>
         </div>
     </div>
 </template>
@@ -11,49 +12,54 @@
         props: ['showTxt', 'show']
     };
 </script>
-<style lang="scss">
-    .wx_loading {
-        position: fixed;
+<style lang="scss" scoped>
+    .spinner {
+        margin: 100px auto;
+        width: 32px;
+        height: 32px;
+        position: relative;
+    }
+
+    .cube1, .cube2 {
+        background-color: #67CF22;
+        width: 30px;
+        height: 30px;
+        position: absolute;
         top: 0;
         left: 0;
-        bottom: 0;
-        right: 0;
-        z-index: 9999;
-        background-color: rgba(0, 0, 0, 0);
-        .wx_loading_inner {
-            text-align: center;
-            background-color: rgba(0, 0, 0, 0.5);
-            color: #ffffff;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            margin-left: -70px;
-            margin-top: -48px;
-            width: 150px;
-            border-radius: 6px;
-            font-size: 14px;
-            padding: 58px 0 10px 0;
-            .wx_loading_icon {
-                position: absolute;
-                top: 15px;
-                left: 50%;
-                margin-left: -16px;
-                width: 24px;
-                height: 24px;
-                border: 2px solid #fff;
-                border-radius: 24px;
-                animation: gif 1s infinite linear;
-                clip: rect(0 auto 12px 0);
 
-                @keyframes gif {
-                    0% {
-                        transform: rotate(0deg);
-                    }
-                    100% {
-                        transform: rotate(360deg);
-                    }
+        -webkit-animation: cubemove 1.8s infinite ease-in-out;
+        animation: cubemove 1.8s infinite ease-in-out;
+    }
+
+    .cube2 {
+        -webkit-animation-delay: -0.9s;
+        animation-delay: -0.9s;
+    }
+
+    @-webkit-keyframes cubemove {
+        25% { -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5) }
+        50% { -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg) }
+        75% { -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5) }
+        100% { -webkit-transform: rotate(-360deg) }
+    }
+
+    @keyframes cubemove {
+        25% {
+            transform: translateX(42px) rotate(-90deg) scale(0.5);
+            -webkit-transform: translateX(42px) rotate(-90deg) scale(0.5);
+        } 50% {
+              transform: translateX(42px) translateY(42px) rotate(-179deg);
+              -webkit-transform: translateX(42px) translateY(42px) rotate(-179deg);
+          } 50.1% {
+                transform: translateX(42px) translateY(42px) rotate(-180deg);
+                -webkit-transform: translateX(42px) translateY(42px) rotate(-180deg);
+            } 75% {
+                  transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+                  -webkit-transform: translateX(0px) translateY(42px) rotate(-270deg) scale(0.5);
+              } 100% {
+                    transform: rotate(-360deg);
+                    -webkit-transform: rotate(-360deg);
                 }
-            }
-        }
     }
 </style>

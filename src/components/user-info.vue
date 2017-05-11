@@ -20,6 +20,7 @@
     // import userStore from '../vuex/user';
     export default {
         replace: true,
+//        通过mapGetters获取到vuex 下的userInfo
         computed: {
             ...mapGetters({
                 userInfo: 'getUserInfo'
@@ -34,6 +35,7 @@
                     }
                 });
             },
+//            通过路由来传递loginname 数据
             goUser() {
                 this.$router.push({
                     name: 'user',

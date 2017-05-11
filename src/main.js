@@ -6,9 +6,11 @@ import routes from './routers';
 import Alert from './libs/alert';
 import store from './vuex/user';
 import FastClick from 'fastclick';
+import ElementUI from 'element-ui';
+
 Vue.use(VueRouter);
 Vue.use(Alert);
-
+Vue.use(ElementUI);
 $.ajaxSettings.crossDomain = true;
 
 // 实例化Vue的filter

@@ -63,6 +63,7 @@
                 return utils.getLastTimeStr(date, friendly);
             },
             getUser() {
+//              this.$route.params.loginame 是前一个路由，通过 $route.push({name:'user',param:{username:'this.loginame'}})
                 let loginname = this.$route.params.loginname;
                 if (!loginname) {
                     this.$alert('缺少用户名参数');

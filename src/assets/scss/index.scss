@@ -10,9 +10,10 @@
 }
 
 .show-menu {
-    transform: translateX($gap*40);
+    transform: translateX(-$gap*40);
 }
 
+//遮罩层
 .page-cover {
     position: fixed;
     top: 0;
