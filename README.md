@@ -1,5 +1,10 @@
 # 基于vue2重写Cnodejs移动端 [线上访问地址](http://120.24.230.56/index.html)
 
+
+### 2017/5/12更新
+回退按钮的功能完善
+登录功能的bug修复
+
 ### 技术栈
 `vue2 + vue-router + vuex + ES6 + less + flex.css`
 
@@ -10,7 +15,7 @@
 通过require.ensure在路由的那个地方来按需加载，作用类似于angular的resolve的lazyload
 webpack 打包，把disk里面的文件丢到阿里云上，配置nginx代理80端口，pm2守护进程，可惜网站还正在备案中，只能通过ip访问：http://120.24.230.56/index.html
 
-有一个问题啊，线上的vue的路由会被后台视为请求的url,一刷新就404了，目前的解决思路是通过nginx来开启重写url把vue中定义的路由全指到index.html，还在解决汇总，欢迎大神指教，感激不尽~
+
 
 ### 安装
 
